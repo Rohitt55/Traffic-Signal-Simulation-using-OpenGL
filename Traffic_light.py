@@ -289,7 +289,7 @@ def draw_hud():
     draw_text(15, 65, "Mouse Drag       : Rotate Camera")
     draw_text(15, 50, "Arrow Keys       : Move Camera")
     draw_text(15, 35, "V / B            : Next / Prev View")
-    draw_text(15, 20, "F:Fog  P:Projection  R:Reset  ESC:Quit")
+    draw_text(15, 20, "F:Fog  P:Projection  R:Reset")
     # Back to 3D
     glPopMatrix()
     glMatrixMode(GL_PROJECTION)
@@ -347,8 +347,6 @@ def keyboard(key, x, y):
         view_index = (view_index - 1) % len(views)
         v = views[view_index]
         cam_x, cam_y, cam_z = v["x"], v["y"], v["z"]
-    elif key == b'\x1b':  # ESC to quit
-        exit(0)
     glutPostRedisplay()
 
 
